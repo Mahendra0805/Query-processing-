@@ -1,0 +1,15 @@
+Certainly! If you want to create a Pivot table to find the item-wise total units sold from a DataFrame named `sales_data`, you can use the following Pandas program:
+
+```python
+import pandas as pd
+
+# Assuming 'sales_data' is your DataFrame
+# Replace 'item' and 'units_sold' with your actual column names
+
+pivot_table = pd.pivot_table(sales_data, values='units_sold', index='item', aggfunc='sum')
+
+print("Pivot Table - Item Wise Unit Sold:")
+print(pivot_table)
+```
+
+Make sure to replace 'item' and 'units_sold' with the actual column names in your DataFrame. This program will display a Pivot table showing the total units sold for each item.
