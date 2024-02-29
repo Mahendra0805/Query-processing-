@@ -1,0 +1,15 @@
+Certainly! If you have a DataFrame named `sales_data` and you want to create a pivot table to find the maximum and minimum sale values for items, you can use the following Pandas program:
+
+```python
+import pandas as pd
+
+# Assuming 'sales_data' is your DataFrame
+# Replace 'item', 'sale', and 'value' with your actual column names
+
+pivot_table = pd.pivot_table(sales_data, values='sale', index='item', aggfunc={'sale': ['max', 'min']})
+
+print("Pivot Table:")
+print(pivot_table)
+```
+
+Make sure to replace 'item', 'sale', and 'value' with the actual column names in your DataFrame. The resulting pivot table will display the maximum and minimum sale values for each item.
