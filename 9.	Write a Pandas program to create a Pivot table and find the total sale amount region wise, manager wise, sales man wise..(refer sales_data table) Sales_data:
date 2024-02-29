@@ -1,0 +1,15 @@
+Certainly! To create a Pivot table and find the total sale amount region-wise, manager-wise, and salesman-wise, you can use the following Pandas program:
+
+```python
+import pandas as pd
+
+# Assuming 'sales_data' is your DataFrame
+# Replace 'Region', 'Manager', 'SalesMan', and 'Sale_amt' with your actual column names
+
+pivot_table = pd.pivot_table(sales_data, values='Sale_amt', index=['Region', 'Manager', 'SalesMan'], aggfunc='sum')
+
+print("Pivot Table - Total Sale Amount:")
+print(pivot_table)
+```
+
+Make sure to replace 'Region', 'Manager', 'SalesMan', and 'Sale_amt' with the actual column names in your DataFrame. This program will display a Pivot table showing the total sale amount for each combination of region, manager, and salesman.
