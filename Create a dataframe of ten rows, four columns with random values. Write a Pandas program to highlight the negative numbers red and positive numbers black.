@@ -1,0 +1,25 @@
+Certainly! Here's an example of creating a DataFrame with ten rows and four columns with random values, and then using a Pandas program to highlight negative numbers in red and positive numbers in black:
+
+```python
+import pandas as pd
+import numpy as np
+from IPython.display import display, HTML
+
+# Create a DataFrame with random values
+np.random.seed(42)  # Setting seed for reproducibility
+data = np.random.randn(10, 4)  # Generating random values
+df = pd.DataFrame(data, columns=['Column1', 'Column2', 'Column3', 'Column4'])
+
+# Define a function to format the numbers with color
+def color_negative_red(val):
+    color = 'red' if val < 0 else 'black'
+    return f'color: {color}'
+
+# Apply the formatting function to the DataFrame
+styled_df = df.style.applymap(color_negative_red)
+
+# Display the styled DataFrame
+display(styled_df)
+```
+
+In this example, the `color_negative_red` function is used to apply red color to negative numbers and black color to positive numbers. The `applymap` function is then used to apply this formatting to the entire DataFrame. The resulting styled DataFrame will be displayed, with negative numbers in red and positive numbers in black.
