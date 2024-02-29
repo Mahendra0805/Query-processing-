@@ -1,0 +1,29 @@
+To create a line plot of historical stock prices for Alphabet Inc. between two specific dates, you can use the `pandas`, `matplotlib`, and `yfinance` libraries. If you haven't installed `yfinance` yet, you can install it using `pip install yfinance`.
+
+Here's a Pandas program that demonstrates how to create such a line plot:
+
+```python
+import pandas as pd
+import yfinance as yf
+import matplotlib.pyplot as plt
+
+# Define the stock symbol and the date range
+stock_symbol = "GOOGL"  # Alphabet Inc.'s stock symbol
+start_date = "2023-01-01"
+end_date = "2024-01-01"
+
+# Download historical stock data using yfinance
+stock_data = yf.download(stock_symbol, start=start_date, end=end_date)
+
+# Plotting the historical stock prices
+plt.figure(figsize=(10, 6))
+plt.plot(stock_data['Close'], label=f"{stock_symbol} Stock Prices")
+plt.title(f"Historical Stock Prices of {stock_symbol} between {start_date} and {end_date}")
+plt.xlabel("Date")
+plt.ylabel("Stock Price (USD)")
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+This program uses the `yfinance` library to download historical stock prices for Alphabet Inc. between the specified dates and then uses `matplotlib` to create a line plot of the closing prices. Adjust the `stock_symbol`, `start_date`, and `end_date` variables based on your specific requirements.
