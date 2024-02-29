@@ -1,0 +1,7 @@
+import pandas as pd
+
+# Assuming df is your DataFrame
+df.replace('', pd.NA, inplace=True)
+df.fillna(pd.NA, inplace=True)
+
+# This will replace empty strings and NaN values with pd.NA, which can be considered as missing values with no valuable information.
